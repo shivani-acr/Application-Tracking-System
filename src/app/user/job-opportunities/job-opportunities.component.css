@@ -1,0 +1,102 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    border-left: 15px solid #7d0eed;
+    
+   }
+   .header-content {
+    width: 100%;
+    padding-top: 60px;
+    padding-left: 10px;
+    height: 10vh;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .header-img{
+    width:auto;
+    height:auto;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  
+  span{                          /* Apply now text styling */
+    color:#7d0eed;
+    font-size: 3rem;
+  }
+  span:hover{
+    color:skyblue;
+    font-weight:bold;
+  }
+  
+  
+  .accordion-panel {
+    margin-bottom: 20px;
+    border: 2px solid #8c53c5;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+  }
+  .accordion-header {
+    background-color: #b078e8;
+    color:black;
+    padding: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  
+  }
+  
+  .accordion-header:hover {
+    background-color: #673ab7;
+    cursor: pointer;
+  }
+  .accordion-description {
+    padding: 10px;
+    color: #333;
+    border: 1px solid seagreen;
+  
+  }
+  .mat-expansion-indicator {
+    color: #8c53c5;
+    transition: transform 0.3s;
+  }
+  
+  .mat-expansion-panel:not(.mat-expanded) .mat-expansion-indicator {
+    transform: rotate(-90deg);
+  }
+  
+  .mat-expansion-panel-content {
+    transition: max-height 0.3s;
+  }
+  
+  .mat-expansion-panel-body {
+    padding: 0;
+  }  
+  .apply-button {
+    background-color: rgb(101, 37, 165);
+    color: white !important;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-left: 45%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .apply-button:hover {
+    background-color: #8b58bb;
+  }
+  
+  @media  (max-width:800px) { 
+    .header-content{
+      font-size: 1rem;
+      padding-top: 10px;
+      height: auto;
+    }
+    span{
+      font-size: 1.5rem;
+    }
+    .header-img{
+      height:auto;
+      width: 5rem;
+    }
+  }

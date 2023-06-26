@@ -1,0 +1,27 @@
+
+
+mat-card {
+    max-width: 400px;
+    margin:auto;
+    margin-top: 100px;
+    padding: 20px;
+    border: 1px solid black;
+    box-shadow: 0.1px 0.1px 0.1px 0.1px rgb(183, 138, 222);
+  }
+  
+  mat-card-header {
+    text-align: center;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+    
+  }
+  mat-form-field:hover{
+    border-radius: 20px;
+  }
+  
+  button {
+    width: 100%;
+  }
