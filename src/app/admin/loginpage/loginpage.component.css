@@ -7,10 +7,16 @@ mat-card {
     padding: 20px;
     border: 1px solid black;
     box-shadow: 0.1px 0.1px 0.1px 0.1px rgb(183, 138, 222);
+  
+  }
+  mat-card-title{
+    font-weight: bold;
+    padding: 20px;
   }
   
   mat-card-header {
     text-align: center;
+    font-weight: bold;
   }
   
   mat-form-field {

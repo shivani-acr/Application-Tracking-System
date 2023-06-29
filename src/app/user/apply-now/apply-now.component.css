@@ -1,45 +1,40 @@
-
 .form-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-  }
-.inputs-container {
-    display: flex;
-    flex-wrap: wrap;
-    
-  }
-.input-field {
-    flex: 1 1 auto;
-    margin-right: 10px;
-  }
-.centered-card {
-    max-width: 800px; 
-    width: 100%;
-    border: 2px solid slateblue ;
-    
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
-.invalid{
-  color:#f44336;
+.inputs-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.input-field {
+  flex: 1 1 auto;
+  margin-right: 10px;
+}
+.centered-card {
+  max-width: 800px;
+  width: 100%;
+  border: 2px solid slateblue;
+}
+.invalid {
+  color: #f44336;
 }
 
-mat-form-field{
-    float: left;   
+mat-form-field {
+  float: left;
 }
 @media (max-width: 600px) {
   .mat-display-1 {
     font-size: 20px;
-}
+  }
 }
 .header {
-    text-align: center;
-    justify-content: center;
-    color: rgb(126, 43, 208);
-    text-decoration: underline;
-    margin-top: 100px ;
-    font-size: large;
-    
-    
+  text-align: center;
+  justify-content: center;
+  color: rgb(126, 43, 208);
+  text-decoration: underline;
+  margin-top: 100px;
+  font-size: large;
 }
 .file-input {
   display: none;

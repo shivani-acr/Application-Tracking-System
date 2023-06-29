@@ -1,62 +1,108 @@
 <div class="header">
-    <h1 class="mat-display-1 " style="font-weight: bold; ">Apply Here</h1>
+  <h1 class="mat-display-1" style="font-weight: bold">Apply Here</h1>
 </div>
-<form [formGroup]="myForm" #ngForm="ngForm" class="form-container" >
-<mat-card class="centered-card">
-    <mat-card-content >
-    <div class="inputs-container">
-            <mat-form-field appearance = "outline" class="input-field" >
-                <mat-label floatLabel = "auto">First Name</mat-label>
-                <input matInput placeholder="First Name" formControlName = "firstname" >
-            </mat-form-field>
-            <mat-form-field appearance = "outline" class="input-field">
-                <mat-label floatLabel = "auto">Last Name</mat-label>
-                <input matInput placeholder="Last Name" formControlName = "lastname" >
-            </mat-form-field>
-    </div>
-     <div class="inputs-container">
-            <mat-form-field appearance = "outline" class="input-field">
-                <mat-label floatLabel = "auto">Phone Number</mat-label>
-                <input matInput placeholder="Phone Number" formControlName = "phonenumber" >
-            </mat-form-field>
-            <mat-form-field appearance = "outline" class="input-field">
-                <mat-label floatLabel = "auto">Total Experience</mat-label>
-                <input matInput placeholder="Total Experience" formControlName = "experience" >
-            </mat-form-field>
-    </div>
-    <div class="inputs-container">
-            <mat-form-field appearance = "outline" class="input-field">
-                <mat-label floatLabel = "auto">Skills</mat-label>
-                <input matInput placeholder="Skills" formControlName = "skills" >
-            </mat-form-field>
-            <mat-form-field class="full-width" appearance = "outline" class="input-field">
-                <mat-label floatLabel = "auto">Current Location</mat-label>
-                <input matInput placeholder="Current Location" formControlName = "currentlocation" >
-            </mat-form-field>
-            <mat-form-field appearance = "outline" class="input-field">
-                <mat-label floatLabel = "auto">Availbility From</mat-label>
-                <input formControlName="availabilityfrom" matInput [matDatepicker]="picker">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-    </div>
-    <mat-radio-group  class="input-field" [ngClass]="{'invalid': ngForm.submitted &amp;&amp; myForm.get('are_you_a_previous_employee').invalid}" formControlName = "are_you_a_previous_employee">
-        <mat-label >Are You a Previous Employee?</mat-label>
-        <mat-radio-button value="Yes" color='primary'> Yes </mat-radio-button>
-        <mat-radio-button value="No" color='primary'> No </mat-radio-button>
-    </mat-radio-group>
-    <input type="file" class="file-input" #fileUpload (change)="onFileChange($event)">     
-    <div >
+<form [formGroup]="myForm" #ngForm="ngForm" class="form-container">
+  <mat-card class="centered-card">
+    <mat-card-content>
+      <div class="inputs-container">
+        <mat-form-field appearance="outline" class="input-field">
+          <mat-label floatLabel="auto">First Name</mat-label>
+          <input
+            matInput
+            placeholder="First Name"
+            formControlName="firstname"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="input-field">
+          <mat-label floatLabel="auto">Last Name</mat-label>
+          <input matInput placeholder="Last Name" formControlName="lastname" />
+        </mat-form-field>
+      </div>
+      <div class="inputs-container">
+        <mat-form-field appearance="outline" class="input-field">
+          <mat-label floatLabel="auto">Phone Number</mat-label>
+          <input
+            matInput
+            placeholder="Phone Number"
+            formControlName="phonenumber"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="input-field">
+          <mat-label floatLabel="auto">Total Experience</mat-label>
+          <input
+            matInput
+            placeholder="Total Experience"
+            formControlName="experience"
+          />
+        </mat-form-field>
+      </div>
+      <div class="inputs-container">
+        <mat-form-field appearance="outline" class="input-field">
+          <mat-label floatLabel="auto">Skills</mat-label>
+          <input matInput placeholder="Skills" formControlName="skills" />
+        </mat-form-field>
+        <mat-form-field
+          class="full-width"
+          appearance="outline"
+          class="input-field"
+        >
+          <mat-label floatLabel="auto">Current Location</mat-label>
+          <input
+            matInput
+            placeholder="Current Location"
+            formControlName="currentlocation"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="input-field">
+          <mat-label floatLabel="auto">Availbility From</mat-label>
+          <input
+            formControlName="availabilityfrom"
+            matInput
+            [matDatepicker]="picker"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <mat-radio-group
+        class="input-field"
+        [ngClass]="{'invalid': ngForm.submitted &amp;&amp; myForm.get('are_you_a_previous_employee').invalid}"
+        formControlName="are_you_a_previous_employee"
+      >
+        <mat-label>Are You a Previous Employee?</mat-label>
+        <mat-radio-button value="Yes" color="primary"> Yes </mat-radio-button>
+        <mat-radio-button value="No" color="primary"> No </mat-radio-button>
+      </mat-radio-group>
+      <input
+        type="file"
+        class="file-input"
+        #fileUpload
+        (change)="onFileChange($event)"
+      />
+      <div>
         <button mat-mini-fab color="primary" (click)="fileUpload.click()">
-            <mat-icon>attach_file</mat-icon>
+          <mat-icon>attach_file</mat-icon>
         </button>
-        <span [ngClass]="{'invalid': ngForm.submitted &amp;&amp; myForm.get('file').invalid}">{{fileName ||"Click Pin to insert Resume"}}</span>
-        
-        <mat-checkbox  color='primary' formControlName = "acceptedpolicy" ></mat-checkbox>
-        <mat-label [ngClass]="{'invalid': ngForm.submitted &amp;&amp; myForm.get('acceptedpolicy').invalid}" >Cookies Policy</mat-label>
-        
-    </div>
-    <button (click)="saveForm()" mat-raised-button color="primary">Submit</button>
-</mat-card-content>
-</mat-card>
+        <span
+          [ngClass]="{'invalid': ngForm.submitted &amp;&amp; myForm.get('file').invalid}"
+          >{{ fileName || "Click Pin to insert Resume" }}</span
+        >
+
+        <mat-checkbox
+          color="primary"
+          formControlName="acceptedpolicy"
+        ></mat-checkbox>
+        <mat-label
+          [ngClass]="{'invalid': ngForm.submitted &amp;&amp; myForm.get('acceptedpolicy').invalid}"
+          >Cookies Policy</mat-label
+        >
+      </div>
+      <button (click)="saveForm()" mat-raised-button color="primary">
+        Submit
+      </button>
+    </mat-card-content>
+  </mat-card>
 </form>
