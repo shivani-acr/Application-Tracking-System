@@ -25,6 +25,17 @@
             </mat-form-field>
     </div>
     <div class="inputs-container">
+        <mat-form-field appearance = "outline" class="input-field">
+            <mat-label floatLabel = "auto">EmailID</mat-label>
+            <input matInput placeholder="EmailID" formControlName = "EmailID" >
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance = "outline" class="input-field">
+            <mat-label floatLabel = "auto">HomeAddress</mat-label>
+            <input matInput placeholder="HomeAddress" formControlName = "Address" >
+        </mat-form-field>
+        
+    </div>
+    <div class="inputs-container">
             <mat-form-field appearance = "outline" class="input-field">
                 <mat-label floatLabel = "auto">Skills</mat-label>
                 <input matInput placeholder="Skills" formControlName = "skills" >
@@ -56,7 +67,9 @@
         <mat-label [ngClass]="{'invalid': ngForm.submitted &amp;&amp; myForm.get('acceptedpolicy').invalid}" >Cookies Policy</mat-label>
         
     </div>
-    <button (click)="saveForm()" mat-raised-button color="primary">Submit</button>
+    <div class = "buttonalign">
+        <button (click)="saveForm()" mat-raised-button color="primary">Submit</button>
+    </div>
 </mat-card-content>
 </mat-card>
 </form>
