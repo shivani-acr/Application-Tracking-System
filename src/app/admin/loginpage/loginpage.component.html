@@ -3,14 +3,14 @@
       <mat-card-title style="padding: 20px;font-weight: bold;">welcome Back!!</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <form>
+      <form (ngSubmit)="login()">
         <mat-form-field>
-          <input matInput placeholder="Username" required>
+          <input matInput type="text" name="username" placeholder="Username" [(ngModel)]="username" required>
         </mat-form-field>
         <mat-form-field>
-          <input matInput type="password" placeholder="Password" required>
+          <input matInput type="password" name="password" [(ngModel)]="password" placeholder="Password" required>
         </mat-form-field>
-        <button mat-raised-button color="primary">Login</button>
+        <button mat-raised-button color="primary" type="submit">Login</button>
       </form>
     </mat-card-content>
   </mat-card>

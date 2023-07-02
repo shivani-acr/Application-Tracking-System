@@ -26,7 +26,6 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     CommonModule,
-    MatExpansionModule,
     MatGridListModule,
     UserRoutingModule,
     MatInputModule,
@@ -42,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatNativeDateModule,
     MatIconModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatExpansionModule
   ]
 })
 export class UserModule { }

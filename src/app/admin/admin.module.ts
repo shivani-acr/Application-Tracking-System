@@ -7,10 +7,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AdminRoutingModule } from './admin-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
-    LoginpageComponent
+    LoginpageComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,
