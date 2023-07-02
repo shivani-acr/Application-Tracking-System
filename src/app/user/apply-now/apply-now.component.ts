@@ -21,7 +21,10 @@ export class ApplyNowComponent implements OnInit {
       availabilityfrom: ['', [Validators.required]],
       acceptedpolicy: ['',[Validators.required]],
       are_you_a_previous_employee:  ['',[Validators.required]],
-      file: [null, Validators.required]
+      file: [null, Validators.required],
+      EmailID:['',[Validators.required]],
+      Address:['',[Validators.required]]
+
     });
   }
   onFileChange(event:any) {
