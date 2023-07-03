@@ -42,8 +42,6 @@ export class ApplyNowComponent implements OnInit {
     }
   }
   saveForm() {
-    if (this.myForm.valid) {
-      console.log('Profile form data :: ', this.myForm.value);
-    }
+   
   }
 }

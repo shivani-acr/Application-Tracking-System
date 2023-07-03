@@ -6,11 +6,13 @@
   font-weight: bold;
   justify-content: space-between;
 }
+
 h2 {
   font-size: 2rem;
   padding-left: 20px;
   padding-top: 80px;
 }
+
 span {
   font-weight: bold;
   color: slateblue;
@@ -18,14 +20,19 @@ span {
   padding-left: 10px;
   text-decoration: underline;
 }
+
 .header-img {
   height: 200px;
   width: auto;
   margin-right: 10px;
 }
+
+
 .content {
   background-color: rgb(182, 178, 213);
 }
+
+
 .job-post-form {
   max-width: 490px;
   margin: auto;
@@ -35,11 +42,15 @@ span {
   border: 1px solid black;
 }
 
+
+
 .mat-card-header {
   background-color: white;
   color: purple;
   padding: 8px;
 }
+
+
 mat-card-title {
   padding: 20px;
   color: blueviolet;
