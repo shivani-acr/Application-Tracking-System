@@ -9,11 +9,11 @@ import { AuthService } from 'src/app/auth.service';
 export class LoginpageComponent {
   username!: string;
   password!: string;
-  constructor(private router: Router,private authService: AuthService) { }
-  login(){
-   const isAuthenticated = this.authService.login(this.username, this.password);
-   if(isAuthenticated){
-    this.router.navigateByUrl('/dashboard');
-   }
+  constructor(private router: Router, private authService: AuthService) { }
+  login() {
+    const isAuthenticated = this.authService.login(this.username, this.password);
+    if (isAuthenticated) {
+      this.router.navigateByUrl('/dashboard');
+    }
   }
 }
