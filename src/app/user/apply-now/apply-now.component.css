@@ -1,46 +1,62 @@
+.logo{
+  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
 
 .form-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-  }
-.inputs-container {
-    display: flex;
-    flex-wrap: wrap;
-    
-  }
-.input-field {
-    flex: 1 1 auto;
-    margin-right: 10px;
-  }
-.centered-card {
-    max-width: 800px; 
-    width: 100%;
-    border: 2px solid slateblue ;
-    
-}
-.invalid{
-  color:#f44336;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
 
-mat-form-field{
-    float: left;   
+
+.inputs-container {
+  display: flex;
+  flex-wrap: wrap;
 }
+
+
+.input-field {
+  flex: 1 1 auto;
+  margin-right: 10px;
+}
+
+
+.centered-card {
+  max-width: 800px;
+  width: 100%;
+  border: 2px solid slateblue;
+}
+
+
+.invalid {
+  color: #f44336;
+}
+
+
+mat-form-field {
+  float: left;
+}
+
+.header {
+  text-align: center;
+  justify-content: center;
+  color: rgb(126, 43, 208);
+  text-decoration: underline;
+  margin-top: 100px;
+  font-size: large;
+}
+
+
+.file-input {
+  display: none;
+}
+
+
 @media (max-width: 600px) {
   .mat-display-1 {
     font-size: 20px;
-}
-}
-.header {
-    text-align: center;
-    justify-content: center;
-    color: rgb(126, 43, 208);
-    text-decoration: underline;
-    margin-top: 100px ;
-    font-size: large;
-    
-    
-}
-.file-input {
-  display: none;
+  }
 }
