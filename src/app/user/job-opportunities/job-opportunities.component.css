@@ -33,6 +33,10 @@ span:hover {
   color: skyblue;
   font-weight: bold;
 }
+.logo{
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
 
 .accordion-panel {
   margin-bottom: 20px;
@@ -50,6 +54,7 @@ span:hover {
 }
 mat-accordion {
   margin-bottom: 10px;
+  position: relative;
 }
 .accordion-header:hover {
   background-color: #673ab7;

@@ -1,69 +1,39 @@
-.header {
+.logo {
+  margin: 10px;
+}
+.job-form {
   display: flex;
-  height: 200px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.form-card {
+  max-width: fit-content;
   width: 100%;
-  border-left: 15px solid slateblue;
-  font-weight: bold;
-  justify-content: space-between;
+  margin: 0;
+}
+
+.form-title {
+  text-align: center;
   margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 2rem;
-  padding-left: 20px;
-  padding-top: 80px;
-}
-
-span {
   font-weight: bold;
-  color: slateblue;
-  font-size: 2rem;
-  padding-left: 10px;
+  color: rgb(122, 24, 147);
   text-decoration: underline;
 }
 
-.header-img {
-  height: 200px;
-  width: auto;
-  margin-right: 10px;
+.form-field {
+  width: 85%;
+  justify-self: center;
+  align-self: center;
+  margin-left: 8%;
 }
 
-
-.content {
-  background-color: rgb(182, 178, 213);
-}
-
-
-.job-post-form {
-  max-width: 490px;
+button {
+  margin-top: 20px;
+  width: 30%;
   margin: auto;
-  background-color: white;
-  color: black;
-  margin-top: 80px;
-  border: 1px solid black;
-}
-
-
-
-.mat-card-header {
-  background-color: white;
-  color: purple;
-  padding: 8px;
-}
-
-
-mat-card-title {
-  padding: 20px;
-  color: blueviolet;
-  font-weight: bold;
-}
-
-mat-form-field {
-  width: 100%;
-  margin-bottom: 16px;
-}
-
-button[type="submit"] {
-  margin-top: 16px;
-  color: blueviolet;
+  align-self: center;
+  margin-left: 33%;
+  height: 10vh;
 }
