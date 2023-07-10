@@ -6,7 +6,7 @@ import { AuthGuard } from '../auth.guard';
 import { ManagejobsComponent } from './managejobs/managejobs.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginpageComponent },
+  { path: 'admin', component: LoginpageComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'managejobs', component: ManagejobsComponent, canActivate: [AuthGuard] }
 ];

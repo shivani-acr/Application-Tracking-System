@@ -1,20 +1,21 @@
 <app-header></app-header>
-<div class="container" >
-    <div class="card" *ngFor="let jobdetail of jobdetails; let i = index" >
-      <div class="card-header">
-        <h2 class="col">{{jobdetail.jobname}} <span class="badge" [ngStyle]="{'color':jobdetail.status === 'Active' ? 'green' : 'red' }" >{{jobdetail.status}}</span></h2>
-      </div>
-      <div class="card-body">
-        <p class="card-text mb-1"> {{jobdetail.totalapplications}}</p>
-        <p class="card-text mb-1">{{jobdetail.location}} </p>
-        <p class="card-text mb-1">{{jobdetail.jobID}} </p>
-        <p class="card-text mb-1">{{jobdetail.posetedondate}}</p>
-        <button mat-button [matMenuTriggerFor]="menu" class="dropdown" >Edit</button>
-        <mat-menu #menu="matMenu" >
-          <button mat-menu-item>Edit Job</button>
-          <button (click)="delete(i)" mat-menu-item>Delete</button>
-          <button (click)="changestatus(i)" mat-menu-item >Change Status</button>
-        </mat-menu>
-      </div>
+<div class="container">
+  <div class="card" *ngFor="let jobdetail of jobdetails; let i = index">
+    <div class="card-header">
+      <h2 class="col">{{jobdetail.jobname}} <span class="badge"
+          [ngStyle]="{'color':jobdetail.status === 'Active' ? 'green' : 'red' }">{{jobdetail.status}}</span></h2>
     </div>
+    <div class="card-body">
+      <p class="card-text mb-1"> {{jobdetail.totalapplications}}</p>
+      <p class="card-text mb-1">{{jobdetail.location}} </p>
+      <p class="card-text mb-1">{{jobdetail.jobID}} </p>
+      <p class="card-text mb-1">{{jobdetail.posetedondate}}</p>
+      <button mat-button [matMenuTriggerFor]="menu" class="dropdown">Edit</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Edit Job</button>
+        <button (click)="delete(i)" mat-menu-item>Delete</button>
+        <button (click)="changestatus(i)" mat-menu-item>Change Status</button>
+      </mat-menu>
     </div>
+  </div>
+</div>

@@ -6,18 +6,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  constructor(private router:Router){}
-  menuVariable:boolean = false;
-  openMenu(){
+  constructor(private router: Router) { }
+  menuVariable: boolean = false;
+  openMenu() {
     this.menuVariable = !this.menuVariable;
   }
-  navigateto(i:any){
-    if(i==1){
+  navigateto(i: any) {
+    if (i == 1) {
       this.router.navigate(['/dashboard']);
     }
-    else if(i ==2){
-    this.router.navigate(['/managejobs']);
-  }
+    else if (i == 2) {
+      this.router.navigate(['/managejobs']);
+    }
   }
 }
 
