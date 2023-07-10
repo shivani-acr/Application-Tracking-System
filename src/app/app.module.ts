@@ -6,11 +6,9 @@ import { AppComponent } from './app.component';
 import { UserModule } from './user/user.module';
 import { AdminModule } from './admin/admin.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -18,7 +16,6 @@ import { AdminModule } from './admin/admin.module';
     BrowserAnimationsModule,
     UserModule,
     AdminModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

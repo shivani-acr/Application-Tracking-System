@@ -33,7 +33,6 @@
                     <mat-label floatLabel="auto">HomeAddress</mat-label>
                     <input matInput placeholder="HomeAddress" formControlName="Address">
                 </mat-form-field>
-
             </div>
             <div class="inputs-container">
                 <mat-form-field appearance="outline" class="input-field">
@@ -70,7 +69,6 @@
                 <mat-label
                     [ngClass]="{'invalid': ngForm.submitted &amp;&amp; myForm.get('acceptedpolicy').invalid}">Cookies
                     Policy</mat-label>
-
             </div>
             <div class="buttonalign">
                 <button (click)="saveForm()" mat-raised-button color="primary">Submit</button>

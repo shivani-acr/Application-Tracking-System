@@ -2,9 +2,10 @@
   display: flex;
   justify-content: space-between;
   border-left: 15px solid #7d0eed;
-
 }
-
+hr{
+  margin: 0;
+}
 .header-content {
   width: 100%;
   padding-top: 60px;
@@ -22,7 +23,6 @@
 }
 
 span {
-  /* Apply now text styling */
   color: #7d0eed;
   font-size: 3rem;
 }

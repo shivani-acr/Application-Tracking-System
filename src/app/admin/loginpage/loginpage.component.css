@@ -11,10 +11,10 @@ mat-card-header {
   text-align: center;
 }
 
+
 mat-form-field {
   width: 100%;
   margin-bottom: 20px;
-
 }
 
 mat-form-field:hover {
@@ -24,3 +24,19 @@ mat-form-field:hover {
 button {
   width: 100%;
 }
+
+.errorStatement{
+  color: red;
+  font-size: 1rem;
+  /* border: solid red 1px;
+  padding: 3px ; */
+  text-align: center;
+  margin-bottom: 1rem;
+  /* border-radius: 0.5rem;
+  background-color: rgb(232, 220, 220); */
+}
+
+mat-form-field{
+  margin-bottom: 0px;
+}
+  
