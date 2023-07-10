@@ -9,11 +9,17 @@ import { MatInputModule } from '@angular/material/input';
 import { AdminRoutingModule } from './admin-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import {MatIconModule} from '@angular/material/icon';
+import { ManagejobsComponent } from './managejobs/managejobs.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
     LoginpageComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeaderComponent,
+    ManagejobsComponent,
   ],
   imports: [
     CommonModule,
@@ -23,7 +29,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     AdminRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule,
+    MatMenuModule,
   ]
 })
 export class AdminModule { }
