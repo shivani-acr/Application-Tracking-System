@@ -1,14 +1,16 @@
 <div class="container-fluid">
+  <img class="logo" src="\assets\images\logo.png">
   <div class="header">
-    <p class="header-content">We are Hiring - <span (click)="navigateToApplyNow()">Apply now!! </span></p>
-    <img
-      src="/assets/image1.jpeg"
-      class="header-img">
+    <p class="header-content">
+      We are Hiring - <span (click)="navigateToApplyNow()">Apply now!! </span>
+    </p>
+    <img src="\assets\images\headerimage.png" alt="" class="header-img" />
   </div>
   <hr />
-  <h2 style="font-weight: bold ; text-decoration: underline; text-align: center;">Available jobs!!</h2><br>
+  <h2>Available jobs!!</h2>
+  <br />
   <div class="row">
-    <mat-accordion class="col-md-6" *ngFor="let job of jobOpportunities" style="margin-bottom: 5px;">
+    <mat-accordion class="col-md-6" *ngFor="let job of jobOpportunities">
       <mat-expansion-panel class="accordion-panel">
         <mat-expansion-panel-header class="accordion-header">
           <strong> {{ job.jobposition }} </strong>
@@ -22,3 +24,4 @@
     </mat-accordion>
   </div>
 </div>
+

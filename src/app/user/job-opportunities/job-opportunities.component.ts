@@ -5,7 +5,7 @@ import { ApiJoblistService } from '../api-joblist.service';
 @Component({
   selector: 'app-job-opportunities',
   templateUrl: './job-opportunities.component.html',
-  styleUrls: ['./job-opportunities.component.css']
+  styleUrls: ['./job-opportunities.component.css'],
 })
 export class JobOpportunitiesComponent {
   jobOpportunities: any[] = [
@@ -60,10 +60,9 @@ export class JobOpportunitiesComponent {
   //   // });
   // }
 
+
   navigateToApplyNow(): void {
     this._router.navigate(['/apply-now']);
   }
-
-
 
 }

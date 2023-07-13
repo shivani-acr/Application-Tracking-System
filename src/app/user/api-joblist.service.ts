@@ -4,9 +4,5 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiJoblistService {
-  // api_url="";
-  // constructor(private _http:HttpClient) { }
-  // getAllJobs(){
-  //  return this._http.get(this.api_url);
-  // }
+
 }

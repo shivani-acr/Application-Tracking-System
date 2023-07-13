@@ -6,8 +6,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 @Component({
   selector: 'app-loginpage',
   templateUrl: './loginpage.component.html',
-  styleUrls: ['./loginpage.component.css']
+  styleUrls: ['./loginpage.component.css'],
 })
+
 export class LoginpageComponent implements OnInit {
   adminForm: any;
   checkvariable = false;
@@ -28,3 +29,6 @@ export class LoginpageComponent implements OnInit {
     }
   }
 }
+
+export class LoginpageComponent {}
+

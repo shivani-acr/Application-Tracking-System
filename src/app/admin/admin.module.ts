@@ -13,6 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import {MatIconModule} from '@angular/material/icon';
 import { ManagejobsComponent } from './managejobs/managejobs.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { JobPostFormComponent } from './jobpostform/jobpostform.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import {MatMenuModule} from '@angular/material/menu';
     DashboardComponent,
     HeaderComponent,
     ManagejobsComponent,
+    JobPostFormComponent
   ],
+
   imports: [
     CommonModule,
     FormsModule,
@@ -34,4 +37,4 @@ import {MatMenuModule} from '@angular/material/menu';
     MatMenuModule,
   ]
 })
-export class AdminModule { }
+export class AdminModule {}
