@@ -35,7 +35,7 @@ export class ApplyNowComponent implements OnInit {
 
       reader.onload = () => {
         this.myForm.patchValue({
-          file: reader.result;
+          file: reader.result,
         });
 
         // need to run CD since file load runs outside of zone

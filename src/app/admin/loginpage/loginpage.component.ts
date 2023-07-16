@@ -30,5 +30,4 @@ export class LoginpageComponent implements OnInit {
   }
 }
 
-export class LoginpageComponent {}
 

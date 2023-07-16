@@ -4,9 +4,6 @@
   border-left: 15px solid #7d0eed;
 }
 
-hr{
-  margin: 0;
-}
 .header-content {
   width: 100%;
   padding-top: 60px;
@@ -18,9 +15,10 @@ hr{
 
 .header-img {
   width: auto;
-  height: auto;
-  border: 1px solid black;
+  height: 150px;
+  border: 2px solid black;
   border-radius: 5px;
+  margin-top: 5px;
 }
 
 span {
@@ -39,7 +37,7 @@ span:hover {
   font-weight: bold;
 }
 
-.logo{
+.logo {
   margin-bottom: 20px;
   margin-top: 10px;
 }
@@ -123,5 +121,4 @@ mat-accordion {
     height: auto;
     width: 5rem;
   }
-
 }

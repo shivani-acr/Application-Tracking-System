@@ -53,16 +53,7 @@ export class JobOpportunitiesComponent {
     }
   ]
   constructor(private _router: Router, private _api: ApiJoblistService) { }
-  // ngOnInit(): void {
-  //   // let ob=this._api.getAllJobs();
-  //   // ob.subscribe((res:any)=>{
-  //   //   this.jobOpportunities=res;
-  //   // });
-  // }
-
-
   navigateToApplyNow(): void {
     this._router.navigate(['/apply-now']);
   }
-
 }
