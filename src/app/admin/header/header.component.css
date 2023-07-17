@@ -3,13 +3,9 @@ header {
     background-color: rgb(97, 75, 164);
 }
 
-.logo {
-    color: rgb(255, 255, 255);
-    font-size: larger;
-}
-
 .menu {
     margin-bottom: 1px;
+    line-height: 54px;
 }
 
 .menu ul {
@@ -64,6 +60,8 @@ header {
     }
 
     .logo {
-        padding-top: 15px;
+        width: 200px;
+        height: auto;
+        line-height: 49px;
     }
 }

@@ -20,6 +20,9 @@ export class HeaderComponent {
     else if (i == 2) {
       this.router.navigate(['/managejobs']);
     }
+    else if (i == 3) {
+      this.router.navigate(['/post-job']);
+    }
   }
 }
 
