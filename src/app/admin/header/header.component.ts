@@ -7,8 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  constructor(private router: Router) { } 
   menuVariable: boolean = false;
+  constructor(private router: Router) { } 
   openMenu() {
     this.menuVariable = !this.menuVariable;
   }
