@@ -2,7 +2,7 @@
   <img class="logo" src="\assets\images\logo.png">
   <div class="header">
     <p class="header-content">
-      We are Hiring - <span (click)="navigateToApplyNow()">Apply now!! </span>
+      We are Hiring - <span >Apply now!! </span>
     </p>
     <img src="\assets\images\headerimage.png" alt="" class="header-img" />
   </div>
@@ -19,7 +19,7 @@
         <p class="accordion-description"> <strong> Required Experience:</strong>{{ job.jobDescription }}</p>
         <p class="accordion-description"> <strong>Job Location:</strong>{{ job.jobDescription }}</p>
         <p class="accordion-description"> <strong>Job Description:</strong>{{ job.jobDescription }}</p>
-        <button mat-button class="apply-button" color="primary" (click)="navigateToApplyNow()">Apply Now</button>
+        <button mat-button class="apply-button" color="primary" (click)="navigateToApplyNow(job.jobid)">Apply Now</button>
       </mat-expansion-panel>
     </mat-accordion>
   </div>

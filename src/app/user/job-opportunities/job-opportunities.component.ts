@@ -53,7 +53,7 @@ export class JobOpportunitiesComponent {
     }
   ]
   constructor(private _router: Router, private _api: ApiJoblistService) { }
-  navigateToApplyNow(): void {
-    this._router.navigate(['/apply-now']);
+  navigateToApplyNow(jobID:number): void {
+    this._router.navigate(['/apply-now',jobID]);
   }
 }

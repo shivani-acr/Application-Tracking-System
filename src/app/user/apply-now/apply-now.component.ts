@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-apply-now',
   templateUrl: './apply-now.component.html',
@@ -7,9 +8,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 })
 export class ApplyNowComponent implements OnInit {
   myForm: any;
-  constructor(private fb: FormBuilder, private cd: ChangeDetectorRef) {}
   fileName = '';
+  jobID :any;
+  constructor(private fb: FormBuilder, private cd: ChangeDetectorRef,private route: ActivatedRoute,
+    private router: Router) {}
   ngOnInit() {
+    this.jobID = this.route.snapshot.params['jobID'];
     this.myForm = this.fb.group({
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
@@ -47,6 +51,5 @@ export class ApplyNowComponent implements OnInit {
     if (this.myForm.valid) {
       console.log('Profile form data :: ', this.myForm.value);
     }
-
   }
 }

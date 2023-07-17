@@ -7,7 +7,7 @@ import { ApplyNowComponent } from './apply-now/apply-now.component';
 const routes: Routes = [
   { path: '', component: JobOpportunitiesComponent },
   { path: 'job-opportunities', component: JobOpportunitiesComponent },
-  { path: 'apply-now', component: ApplyNowComponent },
+  { path: 'apply-now/:jobID', component: ApplyNowComponent },
 ];
 
 @NgModule({
