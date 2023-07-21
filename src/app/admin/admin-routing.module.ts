@@ -8,13 +8,24 @@ import { JobPostFormComponent } from './jobpostform/jobpostform.component';
 
 const routes: Routes = [
   { path: 'admin', component: LoginpageComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'managejobs', component: ManagejobsComponent, canActivate: [AuthGuard] },
-  { path: 'post-job',component:JobPostFormComponent,canActivate: [AuthGuard]}
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'managejobs',
+    component: ManagejobsComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'post-job',
+    component: JobPostFormComponent,
+    canActivate: [AuthGuard],
+  },
 ];
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AdminRoutingModule { }
+export class AdminRoutingModule {}
