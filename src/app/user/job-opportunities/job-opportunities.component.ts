@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiJoblistService } from '../api-joblist.service';
-
+import { SharedService } from 'src/app/services/shared.service';
 @Component({
   selector: 'app-job-opportunities',
   templateUrl: './job-opportunities.component.html',
@@ -46,14 +46,15 @@ export class JobOpportunitiesComponent {
       "jobDescription": "",
 
     }, {
-      "jobid": 6,
+      "jobid": 7,
       "jobposition": "Java developer",
       "jobDescription": "",
 
     }
   ]
-  constructor(private _router: Router, private _api: ApiJoblistService) { }
-  navigateToApplyNow(jobID:number): void {
-    this._router.navigate(['/apply-now',jobID]);
+  constructor(private _router: Router, private _api: ApiJoblistService, private sharedService: SharedService) { }
+  navigateToApplyNow(jobID: number, index: number): void {
+    this._router.navigate(['/apply-now', jobID]);
+    this.sharedService.setJobDetails(this.jobOpportunities[index]);
   }
 }

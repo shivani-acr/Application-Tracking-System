@@ -10,7 +10,7 @@
   <h2>Available jobs!!</h2>
   <br />
   <div class="row">
-    <mat-accordion class="col-md-6" *ngFor="let job of jobOpportunities">
+    <mat-accordion class="col-md-6" *ngFor="let job of jobOpportunities let i = index">
       <mat-expansion-panel class="accordion-panel">
         <mat-expansion-panel-header class="accordion-header">
           <strong> {{ job.jobposition }} </strong>
@@ -19,7 +19,7 @@
         <p class="accordion-description"> <strong> Required Experience:</strong>{{ job.jobDescription }}</p>
         <p class="accordion-description"> <strong>Job Location:</strong>{{ job.jobDescription }}</p>
         <p class="accordion-description"> <strong>Job Description:</strong>{{ job.jobDescription }}</p>
-        <button mat-button class="apply-button" color="primary" (click)="navigateToApplyNow(job.jobid)">Apply Now</button>
+        <button mat-button class="apply-button" color="primary" (click)="navigateToApplyNow(job.jobid,i)">Apply Now</button>
       </mat-expansion-panel>
     </mat-accordion>
   </div>
