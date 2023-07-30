@@ -7,9 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApplicantService {
-  private applicant_url = "http://localhost:9091/applicants";
+  private applicant_url = "http://localhost:9000/applicants";
   constructor(private httpClient: HttpClient) { }
-  createapplicant(applicant: Applicant) {
-    return this.httpClient.post(`${this.applicant_url}`, applicant).pipe((res) => res);
+  createapplicant(applicant: FormData) {
+    return this.httpClient.post(`${this.applicant_url}`, applicant,{ responseType: 'text' }).pipe((res) => res);
   }
 }

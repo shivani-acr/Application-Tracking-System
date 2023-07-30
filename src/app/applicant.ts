@@ -9,7 +9,6 @@ export class Applicant {
   cookiesPolicy!: boolean;
   previousEmployee!: boolean;
   jobId!: number;
-  // file!: any;
-  // emailID!: string;
-  // address!: string;
+  email!: string;
+  home!: string;
 }

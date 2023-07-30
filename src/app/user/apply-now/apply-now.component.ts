@@ -16,7 +16,9 @@ export class ApplyNowComponent implements OnInit {
   jobID!: number;
   applicant: Applicant = new Applicant();
   job = this.sharedService.getJobDetails();
-  submitted = false;
+  now = new Date();
+  success = false;
+  currentFile!: File;
   constructor(
     private fb: FormBuilder,
     private cd: ChangeDetectorRef,
@@ -24,73 +26,73 @@ export class ApplyNowComponent implements OnInit {
     private router: Router,
     private applicantService: ApplicantService,
     private sharedService: SharedService
-  ) { }
+  ) {}
   ngOnInit() {
     this.jobID = this.route.snapshot.params['jobID'];
     this.myForm = this.fb.group({
-      firstname: ['', [Validators.required]],
-      lastname: ['', [Validators.required]],
-      phonenumber: ['', [Validators.required]],
-      experience: ['', [Validators.required]],
+      firstname: ['', [Validators.required, Validators.minLength(4)]],
+      lastname: ['', [Validators.required, Validators.minLength(4)]],
+      phonenumber: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern('^[0-9]*$'),
+          Validators.minLength(10),
+        ],
+      ],
+      experience: [, [Validators.required, Validators.pattern('^[0-9]*$')]],
       skills: ['', [Validators.required]],
       currentlocation: ['', [Validators.required]],
       availabilityfrom: ['', [Validators.required]],
-      acceptedpolicy: ['', [Validators.required]],
+      acceptedpolicy: ['', [Validators.required, Validators.requiredTrue]],
       are_you_a_previous_employee: ['', [Validators.required]],
       file: [null, Validators.required],
-      EmailID: ['', [Validators.required]],
+      EmailID: ['', [Validators.required, Validators.email]],
       Address: ['', [Validators.required]],
     });
   }
   onFileChange(event: any) {
-    const reader = new FileReader();
-    if (event.target.files && event.target.files.length) {
-      const [file] = event.target.files;
-      this.fileName = file.name;
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        this.myForm.patchValue({
-          file: reader.result,
-        });
-        // need to run CD since file load runs outside of zone
-        this.cd.markForCheck();
-      };
-    }
+    this.currentFile = event.target.files[0];
+    this.fileName = this.currentFile.name;
+    this.myForm.get('file').setValue(this.currentFile);
   }
-  saveEmployee() {
-    this.applicantService.createapplicant(this.applicant).subscribe((response) => {
-      console.log(response)
-      this.goToStart();
-    },
-      (error) => console.log(error)
+  saveEmployee(data: FormData) {
+    this.applicantService.createapplicant(data).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error) => {
+        console.log(error);
+      }
     );
-  }
-  goToStart() {
-    this.router.navigate(['job-opportunities']);
   }
   saveForm() {
     if (this.myForm.valid) {
+      const formData = new FormData();
+      this.success = true;
       this.applicant.firstName = this.myForm.value.firstname;
       this.applicant.lastName = this.myForm.value.lastname;
       this.applicant.phoneNumber = this.myForm.value.phonenumber;
       this.applicant.currentLocation = this.myForm.value.currentlocation;
       this.applicant.totalExperience = this.myForm.value.experience;
-      if (this.myForm.value.are_you_a_previous_employee === "Yes") {
+      if (this.myForm.value.are_you_a_previous_employee === 'Yes') {
         this.applicant.previousEmployee = true;
-      } 
-      else {
+      } else {
         this.applicant.previousEmployee = false;
       }
       this.applicant.cookiesPolicy = this.myForm.value.acceptedpolicy;
-      this.applicant.availabilityForm =
-        this.myForm.value.availabilityfrom;
+      this.applicant.availabilityForm = this.myForm.value.availabilityfrom;
       this.applicant.skills = this.myForm.value.skills;
       this.applicant.jobId = this.jobID;
-      //this.applicant.emailID = this.myForm.value.EmailID;
-      //this.applicant.address = this.myForm.value.Address;
+      this.applicant.email = this.myForm.value.EmailID;
+      this.applicant.home = this.myForm.value.Address;
       //this.applicant.file = this.myForm.value.file;
-      console.log(this.applicant)
+      formData.append('file', this.myForm.value.file);
+      const jsonData = JSON.stringify(this.applicant);
+      formData.append('applicantDto', jsonData);
+      //console.log(formData.get('applicantDto'));
+      this.myForm.reset({});
+      this.saveEmployee(formData);
     }
-    this.saveEmployee();
   }
 }

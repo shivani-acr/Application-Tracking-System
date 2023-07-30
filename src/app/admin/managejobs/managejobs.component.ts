@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Joblisting } from 'src/app/joblisting';
+import { JoblistingService } from 'src/app/services/joblisting.service';
 
 @Component({
   selector: 'app-content',
@@ -7,79 +10,51 @@ import { Component } from '@angular/core';
 
 })
 export class ManagejobsComponent {
-  jobdetails: any[] = [
-    {
-      jobname: "Project Mangager1",
-      status: "Active",
-      totalapplications: "Total Applications Received",
-      location: "#location",
-      jobID: "Job_id",
-      posetedondate: "Poseted On Date"
+  jobdetails: any[] = [];
+  constructor(private jobListingService : JoblistingService, private router : Router) { }
+  ngOnInit(): void {
+    this.getJobListing();
+  }
+  private getJobListing(){
+    this.jobListingService.getJobListing().subscribe(data => {
+      this.jobdetails = data;
     },
-    {
-      jobname: "Project Mangager2",
-      status: "Active",
-      totalapplications: "Total Applications Received",
-      location: "#location",
-      jobID: "Job_id",
-      posetedondate: "Poseted On Date"
-    }, {
-      jobname: "Project Mangager3",
-      status: "Active",
-      totalapplications: "Total Applications Received",
-      location: "#location",
-      jobID: "Job_id",
-      posetedondate: "Poseted On Date"
-    }, {
-      jobname: "Project Mangager4",
-      status: "Active",
-      totalapplications: "Total Applications Received",
-      location: "#location",
-      jobID: "Job_id",
-      posetedondate: "Poseted On Date"
-    },
-    {
-      jobname: "Project Mangager5",
-      status: "Active",
-      totalapplications: "Total Applications Received",
-      location: "#location",
-      jobID: "Job_id",
-      posetedondate: "Poseted On Date"
-    },
-    {
-      jobname: "Project Mangager6",
-      status: "Active",
-      totalapplications: "Total Applications Received",
-      location: "#location",
-      jobID: "Job_id",
-      posetedondate: "Poseted On Date"
-    },
-    {
-      jobname: "Project Mangager7",
-      status: "Active",
-      totalapplications: "Total Applications Received",
-      location: "#location",
-      jobID: "Job_id",
-      posetedondate: "Poseted On Date"
-    },
-    {
-      jobname: "Project Mangager8",
-      status: "Active",
-      totalapplications: "Total Applications Received",
-      location: "#location",
-      jobID: "Job_id",
-      posetedondate: "Poseted On Date"
-    },
-  ];
-  changestatus(i: number) {
-    if (this.jobdetails[i].status == "Active") {
-      this.jobdetails[i].status = "Not Active";
+    (error) => {
+      console.log(error)
+    });
+  }
+  changestatus(i: number,jobinfo:Joblisting) {
+    if (jobinfo.status == "Active") {
+      jobinfo.status = "Not Active";
+      this.jobListingService.updateJobListing(i, jobinfo).subscribe( data =>{
+        this.goToManageJobs();
+      },(error) => {
+        console.log(error)
+      });
+
     }
     else {
-      this.jobdetails[i].status = "Active";
+      jobinfo.status = "Active";
+      this.jobListingService.updateJobListing(i, jobinfo).subscribe( data =>{
+        this.goToManageJobs();
+      },(error) => {
+        console.log(error)
+      });
     }
   }
-  delete(i: number) {
-    this.jobdetails.splice(i, 1);
+  goToManageJobs() {
+    this.router.navigate(['/managejobs']);
+  }
+  deletejobListing(i: number) {
+    this.jobListingService.deleteJobListing(i).subscribe(data => {
+      console.log('adsfasd');
+      this.getJobListing();
+    },
+    (error) => {
+      console.log(error)
+    });
+  }
+  update(i:number){
+    this.router.navigate(['/post-job/update',i]);
   }
 }

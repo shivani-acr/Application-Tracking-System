@@ -10,10 +10,11 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { ManagejobsComponent } from './managejobs/managejobs.component';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { JobPostFormComponent } from './jobpostform/jobpostform.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { JobPostFormComponent } from './jobpostform/jobpostform.component';
     ReactiveFormsModule,
     MatIconModule,
     MatMenuModule,
+    MatSelectModule
   ]
 })
-export class AdminModule {}
+export class AdminModule { }

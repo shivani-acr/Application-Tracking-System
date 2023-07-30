@@ -23,6 +23,11 @@ const routes: Routes = [
     component: JobPostFormComponent,
     canActivate: [AuthGuard],
   },
+  {
+    path: 'post-job/update/:i',
+    component: JobPostFormComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],
