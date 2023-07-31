@@ -23,5 +23,8 @@ export class HeaderComponent {
     else if (i == 4){
       this.router.navigate(['/admin']);
     }
+    else if (i == 5){
+      this.router.navigate(['/view-applications']);
+    }
   }
 }

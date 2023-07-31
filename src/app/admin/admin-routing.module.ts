@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from '../auth.guard';
 import { ManagejobsComponent } from './managejobs/managejobs.component';
 import { JobPostFormComponent } from './jobpostform/jobpostform.component';
+import { ViewcandidatesComponent } from './viewcandidates/viewcandidates.component';
 
 const routes: Routes = [
   { path: 'admin', component: LoginpageComponent },
@@ -26,6 +27,11 @@ const routes: Routes = [
   {
     path: 'post-job/update/:i',
     component: JobPostFormComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'view-applications',
+    component: ViewcandidatesComponent,
     canActivate: [AuthGuard],
   },
 ];

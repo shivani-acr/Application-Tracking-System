@@ -44,7 +44,7 @@ export class JobPostFormComponent {
   saveJobListing() {
     this.jobListingService.createjobListing(this.jobListing).subscribe((response) => {
       console.log(response)
-      // this.goToStart();
+      this.goToManageJobs();
     },
       (error) => {
         console.log(error)
@@ -70,6 +70,7 @@ export class JobPostFormComponent {
       else{
         this.saveJobListing();
       }
+      this.jobForm.reset();
     } else {
       // Display error messages or handle invalid form
     }

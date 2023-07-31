@@ -1,0 +1,46 @@
+<app-header></app-header>
+<br>
+<div class="container-fluid">
+  <!-- Dropdown to select job position -->
+  <label for="select">Choose a Job Position :- </label> 
+  <select name = "select" [(ngModel)]="selectedJobId" (change)="onOptionSelected()">
+    <option *ngFor="let jobPosition of jobPositions" [value]= " jobPosition.jobId ">
+      Job Id: {{jobPosition.jobId}} , Job Position: {{ jobPosition.jobTitle }}
+    </option>
+  </select>
+  <br>
+  <br>
+  <p>Total Applications Recieved : {{applications.length}}</p>
+  <!-- candidate.component.html -->
+  <div class="candidate-card" *ngFor="let candidate of applications">
+    <mat-card class="custom-card">
+      <mat-card-title class="custom-card-title">{{
+        candidate.firstName}} {{candidate.lastName
+      }}</mat-card-title>
+      <mat-card-content class="custom-card-content">
+        <div class="details-row">
+          <div class="details-column">
+            <!-- <p><strong>Education:</strong> {{ candidate.education }}</p> -->
+            <p><strong>Location:</strong> {{ candidate.currentLocation }}</p>
+            <p><strong>Skills:</strong> {{ candidate.skills }}</p>
+          </div>
+          <div class="details-column">
+            <p><strong>Experience:</strong> {{ candidate.totalExperience }}</p>
+            <p><strong>Contact Details:</strong> {{ candidate.phoneNumber }}</p>
+            <p><strong>Email:</strong> {{ candidate.email }}</p>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions class="custom-card-actions">
+        <button
+          mat-raised-button
+          color="primary"
+          class="custom-button"
+          (click)="viewResume()"
+        >
+          View Resume
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

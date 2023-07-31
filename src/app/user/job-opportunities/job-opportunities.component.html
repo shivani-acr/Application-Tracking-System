@@ -1,13 +1,13 @@
 <div class="container-fluid">
   <img class="logo" src="\assets\images\logo.png">
-  <div class="header">
+  <!-- <div class="header">
     <p class="header-content">
       We are Hiring - <span>Apply now!! </span>
     </p>
     <img src="\assets\images\headerimage.png" alt="" class="header-img" />
   </div>
   <hr />
-  <h2>Available jobs!!</h2>
+  <h2>Available jobs!!</h2> -->
   <br />
   <div class="row">
     <mat-accordion class="col-md-6" *ngFor="let job of jobsactive  let i = index">
@@ -15,10 +15,10 @@
         <mat-expansion-panel-header class="accordion-header">
           <strong> {{ job.jobTitle }} </strong>
         </mat-expansion-panel-header>
-        <p class="accordion-description"> <strong>Required Skills:</strong>{{ job.requiredSkills }}</p>
-        <p class="accordion-description"> <strong> Required Experience:</strong>{{ job.experience }}</p>
-        <p class="accordion-description"> <strong>Job Location:</strong>{{ job.workLocation }}</p>
-        <p class="accordion-description"> <strong>Job Description:</strong>{{ job.jobDescription}}</p>
+        <p class="accordion-description"> <strong>Required Skills: </strong>{{ job.requiredSkills }}</p>
+        <p class="accordion-description"> <strong> Required Experience: </strong>{{ job.experience }}</p>
+        <p class="accordion-description"> <strong>Job Location: </strong>{{ job.workLocation }}</p>
+        <p class="accordion-description"> <strong>Job Description: </strong>{{ job.jobDescription}}</p>
         <button mat-button class="apply-button" color="primary" (click)="navigateToApplyNow(job.jobId,i)">Apply
           Now</button>
       </mat-expansion-panel>

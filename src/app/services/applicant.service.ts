@@ -12,4 +12,10 @@ export class ApplicantService {
   createapplicant(applicant: FormData) {
     return this.httpClient.post(`${this.applicant_url}`, applicant,{ responseType: 'text' }).pipe((res) => res);
   }
+  getApplicantsByJobId(id: number): Observable<Applicant[]> {
+    return this.httpClient.get<Applicant[]>(`${this.applicant_url}/joblisting/${id}`);
+  }
+  downloadFile(): any {
+		return this.httpClient.get(`${this.applicant_url}/download/ps1.pdf`, {responseType: 'blob'});
+  }
 }

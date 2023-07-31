@@ -15,6 +15,7 @@ import { ManagejobsComponent } from './managejobs/managejobs.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { JobPostFormComponent } from './jobpostform/jobpostform.component';
 import {MatSelectModule} from '@angular/material/select';
+import { ViewcandidatesComponent } from './viewcandidates/viewcandidates.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {MatSelectModule} from '@angular/material/select';
     DashboardComponent,
     HeaderComponent,
     ManagejobsComponent,
-    JobPostFormComponent
+    JobPostFormComponent,
+    ViewcandidatesComponent
   ],
 
   imports: [

@@ -11,4 +11,5 @@ export class Applicant {
   jobId!: number;
   email!: string;
   home!: string;
+  //file!:string;
 }

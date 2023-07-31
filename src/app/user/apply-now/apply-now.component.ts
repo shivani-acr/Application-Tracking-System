@@ -86,7 +86,7 @@ export class ApplyNowComponent implements OnInit {
       this.applicant.jobId = this.jobID;
       this.applicant.email = this.myForm.value.EmailID;
       this.applicant.home = this.myForm.value.Address;
-      //this.applicant.file = this.myForm.value.file;
+      //this.applicant.file = this.fileName;
       formData.append('file', this.myForm.value.file);
       const jsonData = JSON.stringify(this.applicant);
       formData.append('applicantDto', jsonData);
