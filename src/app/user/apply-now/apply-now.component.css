@@ -17,7 +17,7 @@
 .centered-card {
   max-width: 50rem;
   width: 100%;
-  border: 2px solid slateblue;
+  border: 2px solid #F29225;
 }
 
 .invalid {
@@ -43,7 +43,7 @@ mat-form-field {
 .header {
   text-align: center;
   justify-content: center;
-  color: rgb(126, 43, 208);
+  color: #1E80A3;
   text-decoration: underline;
   margin-top: 1.5rem;
   font-size: large;

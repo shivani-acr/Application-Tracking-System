@@ -1,6 +1,6 @@
 header {
   padding: 1rem 0;
-  background-color: rgb(97, 75, 164);
+  background-color: #0e5a76;
 }
 
 .menu {
@@ -22,7 +22,7 @@ header {
 }
 
 .menu ul li:hover {
-  color: #4accd5;
+  color: #F29225;
   cursor: pointer;
   transition: 0.4s ease-in-out;
 }
@@ -37,7 +37,7 @@ header {
     z-index: 10;
     right: -21.5rem;
     top: 4.3rem;
-    background-color: rgb(97, 75, 164);
+    background-color: #0e5a76;
   }
 
   .menu ul li {
