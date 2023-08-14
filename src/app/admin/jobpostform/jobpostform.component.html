@@ -1,16 +1,16 @@
 <app-header></app-header>
-<form [formGroup]="jobForm" (ngSubmit)="onSubmit()" class="job-form">
+<form [formGroup]="jobForm" (ngSubmit)="alert()" class="job-form">
   <mat-card class="form-card">
     <mat-card-content>
       <h2 class="form-title">Add new Job position</h2>
-      <mat-form-field class="form-field">
+      <!-- <mat-form-field class="form-field">
         <input
           matInput
         />
         <mat-error *ngIf="jobForm.get('jobTitle').hasError('required')"
           >Job Title is required</mat-error
         >
-      </mat-form-field>
+      </mat-form-field> -->
       <mat-form-field class="form-field">
         <input
           matInput

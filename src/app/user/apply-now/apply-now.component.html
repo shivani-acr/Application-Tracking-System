@@ -5,9 +5,9 @@
 <form [formGroup]="myForm" #ngForm="ngForm" class="form-container">
     <mat-card class="centered-card">
         <p style="color: red; margin: 1rem;">*required</p>
-        <div *ngIf="success" class="alert alert-success" role="alert">
+        <!-- <div *ngIf="success" class="alert alert-success" role="alert">
             Your Form Submitted Succesfully <a href="" class="alert-link">Navigate to main Page</a>
-        </div>
+        </div> -->
         <mat-card-content>
             <div class="inputs-container">
                 <mat-form-field appearance="outline" class="input-field">
@@ -99,7 +99,7 @@
                     Policy*</mat-label>
             </div>
             <div class="buttonalign">
-                <button (click)="saveForm()" mat-raised-button color="primary">Submit</button>
+                <button (click)="alert()" mat-raised-button color="primary">Submit</button>
             </div>
         </mat-card-content>
     </mat-card>

@@ -44,4 +44,13 @@ export class ViewcandidatesComponent implements OnInit{
 			}
     ,(error: any) => console.log(error))
   }
+  downloadResume(){
+    this.applicantService.downloadFile().subscribe((response: any) => {
+      let blob:any = new Blob([response], { type: 'application/pdf' });
+			const url = window.URL.createObjectURL(blob);
+			// window.open(url);
+			saveAs(blob, 'file.pdf');
+			}
+    ,(error: any) => console.log(error))
+  }
 }

@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Applicant } from 'src/app/applicant';
 import { ApplicantService } from 'src/app/services/applicant.service';
 import { SharedService } from 'src/app/services/shared.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-apply-now',
   templateUrl: './apply-now.component.html',
@@ -57,6 +57,7 @@ export class ApplyNowComponent implements OnInit {
     this.myForm.get('file').setValue(this.currentFile);
   }
   saveEmployee(data: FormData) {
+    this.router.navigate(['']);
     this.applicantService.createapplicant(data).subscribe(
       (response) => {
         console.log(response);
@@ -66,8 +67,24 @@ export class ApplyNowComponent implements OnInit {
       }
     );
   }
+  alert(){
+    Swal.fire({
+    title:'Are you Sure, Do you want to submit?',
+    text: "You Can't edit again",
+    showCancelButton:true,
+    icon:'warning',
+    confirmButtonText:'Yes,Submit',
+    cancelButtonText:'Cancel'
+  }).then((result)=>{
+    if(result.value){
+      this.saveForm()
+    }
+  })
+
+  }
   saveForm() {
     if (this.myForm.valid) {
+      
       const formData = new FormData();
       this.success = true;
       this.applicant.firstName = this.myForm.value.firstname;
@@ -91,8 +108,18 @@ export class ApplyNowComponent implements OnInit {
       const jsonData = JSON.stringify(this.applicant);
       formData.append('applicantDto', jsonData);
       //console.log(formData.get('applicantDto'));
-      this.myForm.reset({});
-      this.saveEmployee(formData);
+      // this.myForm.reset({});
+      Swal.fire({
+        title:'Your details Submitted Succesfully',
+        text: 'Navigating to Main Page',
+        icon: 'success',
+        confirmButtonText:'Ok'
+      }).then((result)=>{
+        if(result.value){
+          this.saveEmployee(formData);
+        }
+      })
+      
     }
   }
 }
