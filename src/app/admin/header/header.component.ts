@@ -19,11 +19,9 @@ export class HeaderComponent {
       this.router.navigate(['/managejobs']);
     } else if (i == 3) {
       this.router.navigate(['/post-job']);
-    }
-    else if (i == 4){
+    } else if (i == 4) {
       this.router.navigate(['/admin']);
-    }
-    else if (i == 5){
+    } else if (i == 5) {
       this.router.navigate(['/view-applications']);
     }
   }

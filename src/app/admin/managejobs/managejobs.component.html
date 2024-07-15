@@ -6,11 +6,8 @@
           [ngStyle]="{'color':jobdetail.status === 'Active' ? 'green' : 'red' }">{{jobdetail.status}}</span></h2>
     </div>
     <div class="card-body">
-      <!-- <p class="card-text mb-1"> {{jobdetail.totalapplications}}</p> -->
-      <!-- <p class="card-text mb-1"> Total Applications</p> -->
       <p class="card-text mb-1">Work Location : {{jobdetail.workLocation}} </p>
       <p class="card-text mb-1">Job ID : {{jobdetail.jobId}} </p>
-      <!-- <p class="card-text mb-1">{{jobdetail.posetedondate}}</p> -->
       <p class="card-text mb-1">Poseted On Date</p>
       <button mat-button [matMenuTriggerFor]="menu" class="dropdown">Edit</button>
       <mat-menu #menu="matMenu">

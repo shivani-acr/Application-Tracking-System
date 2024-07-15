@@ -10,20 +10,22 @@ import { Joblisting } from 'src/app/joblisting';
   templateUrl: './job-opportunities.component.html',
   styleUrls: ['./job-opportunities.component.css'],
 })
+
 export class JobOpportunitiesComponent {
   jobOpportunities: any[] = [];
   active: boolean = false;
   jobsactive: any[] = [];
-
   constructor(
     private _router: Router,
     private _api: ApiJoblistService,
     private sharedService: SharedService,
     private jobListingService: JoblistingService
   ) {}
+
   ngOnInit(): void {
     this.getJobListing();
   }
+
   private getJobListing() {
     this.jobListingService.getJobListing().subscribe((data) => {
       this.jobOpportunities = data;
@@ -34,6 +36,7 @@ export class JobOpportunitiesComponent {
       }
     });
   }
+
   navigateToApplyNow(jobID: number, index: number): void {
     this._router.navigate(['/apply-now', jobID]);
     this.sharedService.setJobDetails(this.jobOpportunities[index]);

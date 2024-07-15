@@ -5,11 +5,13 @@ import { Applicant } from 'src/app/applicant';
 import { ApplicantService } from 'src/app/services/applicant.service';
 import { SharedService } from 'src/app/services/shared.service';
 import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-apply-now',
   templateUrl: './apply-now.component.html',
   styleUrls: ['./apply-now.component.css'],
 })
+
 export class ApplyNowComponent implements OnInit {
   myForm: any;
   fileName = '';
@@ -27,6 +29,7 @@ export class ApplyNowComponent implements OnInit {
     private applicantService: ApplicantService,
     private sharedService: SharedService
   ) {}
+
   ngOnInit() {
     this.jobID = this.route.snapshot.params['jobID'];
     this.myForm = this.fb.group({
@@ -51,11 +54,13 @@ export class ApplyNowComponent implements OnInit {
       Address: ['', [Validators.required]],
     });
   }
+
   onFileChange(event: any) {
     this.currentFile = event.target.files[0];
     this.fileName = this.currentFile.name;
     this.myForm.get('file').setValue(this.currentFile);
   }
+
   saveEmployee(data: FormData) {
     this.router.navigate(['']);
     this.applicantService.createapplicant(data).subscribe(
@@ -67,6 +72,7 @@ export class ApplyNowComponent implements OnInit {
       }
     );
   }
+
   alert(){
     Swal.fire({
     title:'Are you Sure, Do you want to submit?',
@@ -80,11 +86,10 @@ export class ApplyNowComponent implements OnInit {
       this.saveForm()
     }
   })
-
   }
+
   saveForm() {
     if (this.myForm.valid) {
-      
       const formData = new FormData();
       this.success = true;
       this.applicant.firstName = this.myForm.value.firstname;
@@ -107,8 +112,6 @@ export class ApplyNowComponent implements OnInit {
       formData.append('file', this.myForm.value.file);
       const jsonData = JSON.stringify(this.applicant);
       formData.append('applicantDto', jsonData);
-      //console.log(formData.get('applicantDto'));
-      // this.myForm.reset({});
       Swal.fire({
         title:'Your details Submitted Succesfully',
         text: 'Navigating to Main Page',
@@ -118,8 +121,7 @@ export class ApplyNowComponent implements OnInit {
         if(result.value){
           this.saveEmployee(formData);
         }
-      })
-      
+      })  
     }
   }
 }

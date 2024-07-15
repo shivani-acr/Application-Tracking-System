@@ -15,6 +15,7 @@ export class JobPostFormComponent {
   jobListing: Joblisting = new Joblisting();
   id!: number;
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private jobListingService: JoblistingService, private router: Router) { }
+  
   ngOnInit(): void {
     this.jobForm = this.formBuilder.group({
       jobTitle: ['', Validators.required],
@@ -40,6 +41,7 @@ export class JobPostFormComponent {
       }, error => console.log(error));
     }
   }
+  
   saveJobListing() {
     this.jobListingService.createjobListing(this.jobListing).subscribe((response) => {
       console.log(response)
@@ -75,9 +77,11 @@ export class JobPostFormComponent {
       // Display error messages or handle invalid form
     }
   }
+  
   goToManageJobs() {
     this.router.navigate(['/managejobs']);
   }
+  
   alert() {
     if (this.jobForm.valid) {
       Swal.fire({
