@@ -1,0 +1,48 @@
+  .candidate-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .custom-card {
+    background-color: white;
+    color: black;
+    margin: 10px;
+    width: 100%;
+  }
+  
+  .custom-card-title {
+    background-color: #f1b067;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  
+  .custom-card-content {
+    padding: 10px;
+  }
+  
+  .details-row {
+    display: flex;
+  }
+  
+  .details-column {
+    flex: 1;
+  }
+  
+  .custom-card-actions {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+  }
+  
+  .custom-button {
+    background-color: #1E80A3;
+    color: white;
+    float: left;
+  }
+  
+  .custom-button:hover {
+    background-color: #074a62;
+  }

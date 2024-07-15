@@ -1,0 +1,27 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-3 col-3">
+        <div class="logo">
+          <img src="\assets\images\logo.png" alt="" class="logo" />
+        </div>
+      </div>
+      <div class="col-md-9 col-sm-9 col-9 text-end">
+        <div class="menu_icon" (click)="openMenu()">
+          <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+        <div class="menu" [class.menuClass]="menuVariable">
+          <ul>
+            <li (click)="navigateto(1)">Dashboard</li>
+            <li (click)="navigateto(2)">ManageJobs</li>
+            <li (click)="navigateto(3)">New Job</li>
+            <li (click)="navigateto(5)">View Applications</li>
+            <li (click)="navigateto(4)">Sign Out</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

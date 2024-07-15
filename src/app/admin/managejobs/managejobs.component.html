@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="container">
+  <div class="card" *ngFor="let jobdetail of jobdetails; let i = index">
+    <div class="card-header">
+      <h2 class="col">{{jobdetail.jobTitle}} <span class="badge"
+          [ngStyle]="{'color':jobdetail.status === 'Active' ? 'green' : 'red' }">{{jobdetail.status}}</span></h2>
+    </div>
+    <div class="card-body">
+      <p class="card-text mb-1">Work Location : {{jobdetail.workLocation}} </p>
+      <p class="card-text mb-1">Job ID : {{jobdetail.jobId}} </p>
+      <p class="card-text mb-1">Poseted On Date</p>
+      <button mat-button [matMenuTriggerFor]="menu" class="dropdown">Edit</button>
+      <mat-menu #menu="matMenu">
+        <button (click)="update(jobdetail.jobId)" mat-menu-item>Edit Job</button>
+        <button (click)="deletejobListing(jobdetail.jobId)" mat-menu-item>Delete</button>
+        <button (click)="changestatus(jobdetail.jobId,jobdetail)" mat-menu-item>Change Status</button>
+      </mat-menu>
+    </div>
+  </div>
+</div>

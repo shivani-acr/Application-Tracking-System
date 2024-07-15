@@ -1,0 +1,63 @@
+header {
+  padding: 1rem 0;
+  background-color: #0e5a76;
+}
+
+.menu {
+  margin-bottom: 1px;
+  line-height: 3.4rem;
+}
+
+.menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  list-style-type: none;
+  color: white;
+  display: inline-block;
+  font-size: 0.9rem;
+  margin-left: 1.8rem
+}
+
+.menu ul li:hover {
+  color: #F29225;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+.menu_icon {
+  display: none;
+}
+
+@media only screen and (max-width: 999px) {
+  .menu {
+    position: fixed;
+    z-index: 10;
+    right: -21.5rem;
+    top: 4.3rem;
+    background-color: #0e5a76;
+  }
+
+  .menu ul li {
+    display: block;
+    text-align: left;
+    margin: 0;
+    padding: 0.6rem 1.6rem 0.6rem 1.6rem;
+  }
+
+  .menu_icon {
+    display: inline-block;
+  }
+
+  .menuClass {
+    right: 0;
+    transition: 0.4s ease-in-out;
+  }
+
+  .logo {
+    width: 12.5rem;
+    line-height: 3rem;
+  }
+}

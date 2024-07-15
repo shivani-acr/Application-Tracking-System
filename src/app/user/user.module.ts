@@ -23,7 +23,6 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [JobOpportunitiesComponent, ApplyNowComponent],
   imports: [
     CommonModule,
-    MatExpansionModule,
     MatGridListModule,
     UserRoutingModule,
     MatInputModule,
@@ -40,6 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
+    MatExpansionModule
   ],
+
 })
-export class UserModule {}
+export class UserModule { }
